@@ -1,56 +1,79 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
+/* App Container */
 .app {
-  text-align: center;
-  padding: 20px;
-}
-
-nav {
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 60px;
   background-color: #282c34;
-  padding: 10px 0;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  z-index: 1000;
 }
 
-nav a {
-  color: #61dafb;
-  margin: 0 15px;
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar .toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.sidebar-links {
+  margin-top: 30px;
+}
+
+.sidebar-links a {
+  display: block;
+  color: white;
   text-decoration: none;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.sidebar-links a:hover {
+  background-color: #3a3f47;
 }
 
-.about-me, .gallery {
+/* Main Content */
+.content {
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
+  flex: 1;
   padding: 20px;
 }
 
-h1, h2 {
-  color: #282c34;
+.content.shifted {
+  margin-left: 250px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
+  }
 
-li {
-  margin: 10px 0;
-}
+  .sidebar.open {
+    width: 250px;
+  }
 
-a {
-  color: #61dafb;
-  text-decoration: none;
-}
+  .content {
+    margin-left: 0;
+  }
 
-a:hover {
-  text-decoration: underline;
+  .content.shifted {
+    margin-left: 0;
+  }
 }

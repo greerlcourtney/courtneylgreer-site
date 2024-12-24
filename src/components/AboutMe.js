@@ -5,8 +5,8 @@ function AboutMe() {
   return (
     <div className="about-page">
       <header className="about-header">
-        <h1>Hi, my name is Courtney Greer</h1>
-        <p>I'm passionate about building people-centered products.</p>
+        <h1>hi, my name is Courtney Greer</h1>
+        <h2>I'm passionate about building people-centered products.</h2>
       </header>
 
       <section className="about-section">
