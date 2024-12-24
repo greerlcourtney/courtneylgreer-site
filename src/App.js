@@ -16,7 +16,7 @@ return (
   <Router>
       <div className="app">
         {/* Sidebar */}
-        <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <div className={`sidebar ${isSidebarOpen ? 'open' : 'collapsed'}`}>
           <button className="toggle-btn" onClick={toggleSidebar}>
             ☰
           </button>
