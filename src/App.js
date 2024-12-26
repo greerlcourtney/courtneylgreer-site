@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Main from './components/Main';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 
 function App() {
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
 return (
   <Router>
       <div className="app">
@@ -21,7 +20,8 @@ return (
             ☰
           </button>
           <div className="sidebar-links">
-            <Link to="/" onClick={toggleSidebar}> Resume</Link>
+            <Link to="/" onClick={toggleSidebar}> Main</Link>
+            <Link to="/AboutMe" onClick={toggleSidebar}> Resume</Link>
             <Link to="/Projects" onClick={toggleSidebar}> Projects</Link>
           </div>
         </div>
@@ -29,7 +29,8 @@ return (
         {/* Main Content */}
         <div className={`content ${isSidebarOpen ? 'shifted' : ''}`}>
           <Routes>
-            <Route path="/" element={<AboutMe />} />
+            <Route path="/" elemment={<Main />} />
+            <Route path="/AboutMe" element={<AboutMe />} />
             <Route path="/Projects" element={<Projects />} />
           </Routes>
         </div>

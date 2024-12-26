@@ -1,2 +1,2 @@
 # courtneylgreer-site
-My resume site displaying my experience and my technical projects
+My site, displaying my career experience and showcasing my projects
