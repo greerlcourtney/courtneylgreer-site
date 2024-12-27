@@ -1,24 +1,42 @@
+import React from 'react';
+import './Projects.css';
+
 function Projects() {
-    const projects = [
-      { name: 'Project 1', url: 'https://example.com/project1' },
-      { name: 'Project 2', url: 'https://example.com/project2' },
-      { name: 'Project 3', url: 'https://example.com/project3' },
-    ];
-  
-    return (
-      <div className="projects">
-        <h1>My Projects</h1>
-        <ul>
-          {projects.map((project, index) => (
-            <li key={index}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                {project.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+  const projects = [
+    {
+      name: 'Who Got Invested In?',
+      description: 'A data visualization tool for tracking startup investments.',
+      github: 'https://github.com/yourusername/who-got-invested-in',
+    },
+    {
+      name: 'Voxxy AI',
+      description: 'An AI-powered voice assistant platform.',
+      github: 'https://github.com/yourusername/voxxy-ai',
+    },
+    {
+      name: 'MCAP Quiz Guide',
+      description: 'A comprehensive quiz application for certification preparation.',
+      github: 'https://github.com/yourusername/mcap-quiz-guide',
+    },
+  ];
+
+  return (
+    <div className="projects-page">
+      <h1>My Projects</h1>
+      <p>Explore some of the projects I've worked on. Click on any project to view its source code on GitHub.</p>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
+            <h2>{project.name}</h2>
+            <p>{project.description}</p>
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              View on GitHub →
+            </a>
+          </div>
+        ))}
       </div>
-    );
-  }
-  
-  export default Projects;
+    </div>
+  );
+}
+
+export default Projects;

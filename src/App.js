@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Main from './components/Main';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
+import './App.css';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -29,9 +29,9 @@ return (
         {/* Main Content */}
         <div className={`content ${isSidebarOpen ? 'shifted' : ''}`}>
           <Routes>
-            <Route path="/" elemment={<Main />} />
-            <Route path="/AboutMe" element={<AboutMe />} />
-            <Route path="/Projects" element={<Projects />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/Aboutme" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </div>
       </div>
