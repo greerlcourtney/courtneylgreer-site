@@ -6,7 +6,7 @@
 
 /* Sidebar Styles */
 .sidebar {
-  width: 60px;
+  width: 0;
   background-color: #282c34;
   color: white;
   height: 100vh;
@@ -14,12 +14,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: width 0.3s ease;
 }
 
 /* Collapsed Sidebar */
@@ -38,6 +37,8 @@
   font-size: 1.5rem;
   cursor: pointer;
   margin: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 /* Sidebar Links (Visible only when open) */
@@ -47,6 +48,12 @@
   margin-top: 20px;
   width: 100%;
   text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open .sidebar-links {
+  opacity: 1;
 }
 
 .sidebar-links a {
@@ -55,6 +62,7 @@
   text-decoration: none;
   padding: 10px 20px;
   font-size: 1.1rem;
+  white-space: nowrap;
 }
 
 .sidebar-links a:hover {
@@ -88,6 +96,10 @@
   }
 
   .content.shifted {
-    margin-left: 0;
+    margin-left: 250px;
+  }
+
+  .sidebar.collapsed .toggle-btn {
+    opacity: 0.5;
   }
 }

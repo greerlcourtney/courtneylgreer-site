@@ -1,9 +1,10 @@
 /* General page styling */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   margin: 0;
   color: #333;
+  line-height: 1.6;
 }
 
 .main-page {
@@ -11,6 +12,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* Header styling */
@@ -21,14 +23,35 @@ body {
 }
 
 .main-header h1 {
-  font-size: 3rem;
-  color: #333;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #2193b0, #6dd5ed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .main-header p {
-  font-size: 1.8rem;
-  color: #070707;
-  padding-top: 10px;
+  font-size: 2rem;
+  color: #1a1a1a;
+  padding-top: 15px;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Section styling */
@@ -46,10 +69,26 @@ body {
 
 .main-section p {
   margin: 15px 0;
-  
 }
 
 .main-about-section p {
-  padding-bottom: 5px;
   font-size: 1.6rem;
-  }
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.main-about-section p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(33, 147, 176, 0.3);
+}
