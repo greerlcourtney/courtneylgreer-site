@@ -6,28 +6,20 @@ import Projects from './components/Projects';
 import './App.css';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-return (
-  <Router>
+  return (
+    <Router>
       <div className="app">
-        {/* Sidebar */}
-        <div className={`sidebar ${isSidebarOpen ? 'open' : 'collapsed'}`}>
-          <button className="toggle-btn" onClick={toggleSidebar}>
-            ☰
-          </button>
-          <div className="sidebar-links">
-            <Link to="/" onClick={toggleSidebar}> Main</Link>
-            <Link to="/AboutMe" onClick={toggleSidebar}> Resume</Link>
-            <Link to="/Projects" onClick={toggleSidebar}> Projects</Link>
+        {/* Top Navigation */}
+        <nav className="top-nav">
+          <div className="nav-links">
+            <Link to="/">Main</Link>
+            <Link to="/AboutMe">Resume</Link>
+            <Link to="/Projects">Projects</Link>
           </div>
-        </div>
+        </nav>
 
         {/* Main Content */}
-        <div className={`content ${isSidebarOpen ? 'shifted' : ''}`}>
+        <div className="content">
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/Aboutme" element={<AboutMe />} />

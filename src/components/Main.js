@@ -6,8 +6,7 @@ function Main() {
     <div className="main-page">
       {/* Header Section */}
       <header className="main-header">
-        <h1>Hi, my name is Courtney Greer</h1>
-        <p>I'm passionate about building people-centered products.</p>
+        <h1>Courtney Greer</h1>
       </header>
 
       {/* About Section */}

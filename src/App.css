@@ -4,102 +4,75 @@
   min-height: 100vh;
 }
 
-/* Sidebar Styles */
-.sidebar {
-  width: 0;
-  background-color: #282c34;
-  color: white;
-  height: 100vh;
-  overflow: hidden;
+/* Top Navigation */
+.top-nav {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  backdrop-filter: blur(5px);
+  padding: 1.2rem;
   position: fixed;
   top: 0;
   left: 0;
-  transition: all 0.3s ease;
+  right: 0;
   z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-links {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
   align-items: center;
 }
 
-/* Collapsed Sidebar */
-.sidebar.collapsed {
-  width: 60px;
-}
-
-.sidebar.open {
-  width: 250px;
-}
-
-.sidebar .toggle-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin: 10px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-/* Sidebar Links (Visible only when open) */
-.sidebar-links {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  width: 100%;
-  text-align: left;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.sidebar.open .sidebar-links {
-  opacity: 1;
-}
-
-.sidebar-links a {
-  display: block;
-  color: white;
+.nav-links a {
+  color: #333;
   text-decoration: none;
-  padding: 10px 20px;
   font-size: 1.1rem;
-  white-space: nowrap;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.sidebar-links a:hover {
-  background-color: #3a3f47;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #2193b0, #6dd5ed);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #6dd5ed;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* Main Content */
 .content {
-  margin-left: 60px;
-  transition: margin-left 0.3s ease;
-  flex: 1;
+  margin-top: 80px;
   padding: 20px;
+  flex: 1;
 }
 
-.content.shifted {
-  margin-left: 250px;
-}
-
-/* Responsive Sidebar Behavior */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .sidebar.collapsed {
-    width: 0;
+  .nav-links {
+    gap: 1rem;
   }
 
-  .sidebar.open {
-    width: 250px;
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
   }
-
-  .content {
-    margin-left: 0;
-  }
-
-  .content.shifted {
-    margin-left: 250px;
-  }
+}
 
   .sidebar.collapsed .toggle-btn {
     opacity: 0.5;
   }
-}
+
