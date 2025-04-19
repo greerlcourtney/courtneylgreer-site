@@ -1,5 +1,4 @@
 import React from 'react';
-import './Projects.css';
 
 function Projects() {
   const projects = [
@@ -26,7 +25,7 @@ function Projects() {
   ];
 
   return (
-    <div className="projects-page">
+    <div className="projects-section">
       <h1>My Projects</h1>
       <p>Explore some of the projects I've worked on. Click on any project to view more.</p>
       <div className="projects-grid">
