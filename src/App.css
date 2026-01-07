@@ -1,58 +1,141 @@
-/* App Container */
-.app {
-  display: flex;
-  min-height: 100vh;
+/* General Body Styles */
+body {
   background-color: #000;
   color: #fff;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  line-height: 1.6;
 }
 
-/* Top Navigation */
-.top-nav {
-  background: #111;
-  padding: 1.2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #f39c12;
+/* App Container */
+.app {
+  text-align: center;
 }
 
 /* Main Content */
-.content {
-  margin-top: 80px;
-  padding: 20px;
-  flex: 1;
+.main-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: left;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .nav-links a {
-    font-size: 1rem;
-    padding: 0.3rem 0.8rem;
-  }
+/* Header */
+.main-header {
+  padding: 80px 0;
+  border-bottom: 1px solid #333;
 }
 
-  .sidebar.collapsed .toggle-btn {
-    opacity: 0.5;
-  }
+.main-header h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0;
+}
 
+/* Sections */
+section {
+  padding: 60px 0;
+  border-bottom: 1px solid #333;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* About Section */
+.main-about-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Experience Section */
+.experience {
+  margin-bottom: 40px;
+}
+
+.experience h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.experience p {
+  color: #aaa;
+}
+
+.experience ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experience li {
+  margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #aaa;
+}
+
+.project-card a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Contact Section */
+.contact-section .email-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.contact-section .email-link:hover {
+  color: #aaa;
+  border-color: #aaa;
+}
+
+/* Scroll Animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

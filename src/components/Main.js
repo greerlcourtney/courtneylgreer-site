@@ -1,10 +1,29 @@
 import React from 'react';
-import './Main.css';
-// import './AboutMe.css'; // Removed as file was deleted
-// import './Projects.css'; // Removed as file was deleted
 import ScrollAnimation from './ScrollAnimation';
 
 function Main() {
+  const projects = [
+    {
+      name: 'Who Got Invested In?',
+      description: 'A data visualization tool for tracking startup investments.',
+      github: 'https://www.infiniti-minds.com/',
+    },
+    {
+      name: 'Voxxy AI',
+      description: 'An AI-powered voice assistant platform.',
+      github: 'https://www.voxxyai.com/',
+    },
+    {
+      name: 'MCAP Quiz Guide',
+      description: 'A comprehensive quiz application for certification preparation.',
+      github: 'https://mcat-tracker-pro.vercel.app/',
+    },
+    {
+      name: 'Kudos',
+      description: 'Winner of the Female Foundery Hackathon | A two sided marketplace helping parents find tutors and tutors find experience.',
+      github: 'https://kudos-tutor-student.vercel.app/',
+    }
+  ];
 
   return (
     <div className="main-page">
@@ -145,28 +164,30 @@ function Main() {
       </section>
       {/* === About Me Content End === */}
 
+      {/* Projects Section */}
+      <section className="projects-section">
+        <h2>My Projects</h2>
+        <p>Explore some of the projects I've worked on. Click on any project to view more.</p>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              <h2>{project.name}</h2>
+              <p>{project.description}</p>
+              <a href={project.github} target="_blank" rel="noopener noreferrer">
+                View  →
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="contact-section">
         <h2>Let's Connect</h2>
         <p>I'm always excited to connect with fellow builders, founders, and tech enthusiasts. Whether you want to chat about group planning, AI, or just share startup stories, I'd love to hear from you.</p>
-        
-        <div className="contact-grid">
-          <div className="contact-details">
-            <p><strong>Email:</strong> courtneygreer@voxxyai.com</p>
-            <p><strong>Location:</strong> New York, NY</p>
-            <div className="social-icons">
-              <a href="https://linkedin.com/in/courtney-greer" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/greerlcourtney" target="_blank" rel="noopener noreferrer">Github</a>
-            </div>
-          </div>
-          
-          <form className="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
+        <p>
+          <a href="mailto:courtneygreer@heyvoxxy.com" className="email-link">courtneygreer@heyvoxxy.com</a>
+        </p>
       </section>
     </div>
   );
