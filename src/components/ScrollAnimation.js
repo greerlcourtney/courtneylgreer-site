@@ -2,46 +2,88 @@ import { useEffect } from 'react';
 
 const ScrollAnimation = () => {
   useEffect(() => {
-    // Intersection Observer setup
+    // === TEXT REVEAL ANIMATION ===
+    const revealElements = document.querySelectorAll('.text-reveal');
+
+    revealElements.forEach(element => {
+      const text = element.textContent;
+      element.innerHTML = '';
+
+      // Split into words and wrap each
+      const words = text.split(' ');
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'word';
+        wordSpan.textContent = word;
+        wordSpan.style.transitionDelay = `${index * 0.08}s`;
+        element.appendChild(wordSpan);
+
+        // Add space after word (except last)
+        if (index < words.length - 1) {
+          element.appendChild(document.createTextNode(' '));
+        }
+      });
+    });
+
+    // === INTERSECTION OBSERVER FOR ANIMATIONS ===
     const observerOptions = {
-      root: null, // use viewport as root
+      root: null,
       rootMargin: '0px',
-      threshold: 0.1 // trigger when 10% of element is visible
+      threshold: 0.2
     };
 
-    // Callback function when elements intersect
     const observerCallback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          // Once the animation has played, no need to observe anymore
+
+          // For text reveal, trigger word animations
+          if (entry.target.classList.contains('text-reveal')) {
+            const words = entry.target.querySelectorAll('.word');
+            words.forEach(word => {
+              word.classList.add('revealed');
+            });
+          }
+
           observer.unobserve(entry.target);
         }
       });
     };
 
-    // Create observer
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Target all paragraphs in the main-about-section
-    const paragraphs = document.querySelectorAll('.main-about-section p');
-    
-    // Add the fade-in-section class and observe each paragraph
-    paragraphs.forEach(paragraph => {
-      paragraph.classList.add('fade-in-section');
-      paragraph.style.visibility = 'visible'; // Make visible for intersection observer
-      observer.observe(paragraph);
-    });
+    // Observe fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Cleanup function
-    return () => {
-      paragraphs.forEach(paragraph => {
-        observer.unobserve(paragraph);
-      });
+    // Observe text reveal elements
+    document.querySelectorAll('.text-reveal').forEach(el => observer.observe(el));
+
+    // === PROGRESS LINE ===
+    const progressLine = document.querySelector('.progress-line');
+
+    const updateProgressLine = () => {
+      if (!progressLine) return;
+
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+
+      progressLine.style.width = `${scrollPercent}%`;
     };
-  }, []); // Empty dependency array means this effect runs once on mount
 
-  return null; // This component doesn't render anything
+    window.addEventListener('scroll', updateProgressLine, { passive: true });
+    updateProgressLine();
+
+    // Cleanup
+    return () => {
+      document.querySelectorAll('.fade-in, .text-reveal').forEach(el => {
+        observer.unobserve(el);
+      });
+      window.removeEventListener('scroll', updateProgressLine);
+    };
+  }, []);
+
+  return null;
 };
 
 export default ScrollAnimation;

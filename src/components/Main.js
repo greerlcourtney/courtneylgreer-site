@@ -4,190 +4,206 @@ import ScrollAnimation from './ScrollAnimation';
 function Main() {
   const projects = [
     {
-      name: 'Who Got Invested In?',
-      description: 'A data visualization tool for tracking startup investments.',
-      github: 'https://www.infiniti-minds.com/',
+      name: 'Voxxy',
+      description: 'AI-powered social planning platform.',
+      url: 'https://www.voxxyai.com/',
+      category: 'Startup',
+      tech: ['React', 'Node.js', 'AI/ML'],
     },
     {
-      name: 'Voxxy AI',
-      description: 'An AI-powered voice assistant platform.',
-      github: 'https://www.voxxyai.com/',
+      name: 'Black Tech News',
+      description: 'Aggregator for Black tech innovation stories.',
+      url: 'https://www.blacktechnews.cc/',
+      category: 'Side Project',
+      tech: ['React', 'API'],
     },
     {
-      name: 'MCAP Quiz Guide',
-      description: 'A comprehensive quiz application for certification preparation.',
-      github: 'https://mcat-tracker-pro.vercel.app/',
+      name: 'Spin The Globe',
+      description: 'Discover stories from around the world.',
+      url: 'https://www.wolfdevelopmentstudio.com/spin-the-globe',
+      category: 'Side Project',
+      tech: ['React', 'API'],
     },
     {
       name: 'Kudos',
-      description: 'Winner of the Female Foundery Hackathon | A two sided marketplace helping parents find tutors and tutors find experience.',
-      github: 'https://kudos-tutor-student.vercel.app/',
-    }
+      description: 'Two-sided marketplace connecting parents with tutors.',
+      url: 'https://kudos-tutor-student.vercel.app/',
+      category: 'Hackathon Winner',
+      tech: ['React', 'Node.js'],
+    },
+    {
+      name: 'MCAT Quiz',
+      description: 'MCAT prep quiz application.',
+      url: 'https://mcat-tracker-pro.vercel.app/',
+      category: 'Side Project',
+      tech: ['React', 'Vercel'],
+    },
+  ];
+
+  const experience = [
+    {
+      title: 'CEO & Co-Founder, Voxxy AI',
+      date: 'Present',
+      description: 'Leading product, fundraising, and go-to-market for a two-product AI company. Building with paying customers, shipping weekly, and preparing for a pre-seed round.',
+    },
+    {
+      title: 'Senior Technical Program Manager, Microsoft',
+      date: '2019–2024',
+      description: 'Led product strategy and cross-functional delivery. Shipped internal tools to 10K+ users. Built dashboards, Power Apps, and Azure DevOps integrations. Hosted conferences and hackathons.',
+    },
+    {
+      title: 'Partner Development Manager, Microsoft',
+      date: '2017–2019',
+      description: 'Managed a $2M Azure portfolio across 50+ startups and ISVs. Drove cloud adoption, delivered technical training to 100+ recruits, and spoke at industry events.',
+    },
+  ];
+
+  const community = [
+    {
+      title: 'CS Teacher, Boys and Girls High School (Brooklyn)',
+      description: 'Taught computer science to high schoolers through the TEALS program. Delivered lessons on generative AI and cybersecurity. Hosted career days at Microsoft.',
+    },
+    {
+      title: 'Board of Directors, Seattle Pride',
+      description: 'Helped transition the Seattle Pride Parade to a virtual event during the pandemic. Supported fundraising and community engagement.',
+    },
+    {
+      title: 'Volunteer, Black Girls Code & Girls Who Code',
+      description: 'Led coding workshops, hackathons, and summer camps. Developed an 8-week HTML/CSS curriculum for high school students in Toledo, Ohio.',
+    },
+    {
+      title: 'Lab IT Technician, Center on Halsted',
+      description: 'Supported community members with resume building and computer literacy.',
+    },
   ];
 
   return (
     <div className="main-page">
+      <div className="progress-line" />
       <ScrollAnimation />
-      {/* Header Section */}
-      <header className="main-header">
-        <h1>Courtney Greer</h1>
-      </header>
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <h1><span className="text-reveal">Courtney Greer</span><span className="accent">.</span></h1>
+        <p className="hero-tagline text-reveal">Founder. Builder. Community technologist.</p>
+        <p className="hero-description">
+          I build tools that help people connect in real life. Currently CEO & Co-Founder of Voxxy AI, where we're creating the infrastructure for social planning — from dinner with friends to large-scale community events.
+        </p>
+        <div className="hero-links">
+          <a href="https://www.linkedin.com/in/courtney-greer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/greerlcourtney/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:courtneygreer@heyvoxxy.com">Email</a>
+        </div>
+      </section>
 
       {/* About Section */}
-      <section className="main-about-section">
-        <p>
-          I'm a founder, builder, community lover, and obsessed learner on a mission to make group planning effortless and joyful.
-        </p>
-        <p>
-          Right now, I'm the CEO of Voxxy, a company reimagining how we coordinate plans with the people we care about. Whether it's a dinner with friends, a weekend getaway, or a special event...Voxxy helps people decide faster, stress less, and create more memories together.
-        </p>
-        <p>
-          Before Voxxy, I spent nearly a decade in tech leading product strategy, building systems, and scaling programs at Microsoft. I've led enterprise security rollouts, founded internal equity groups, launched AI products, and mentored first-time builders. But no matter the project, my approach stays the same, move fast, stay curious, listen deeply, and build with what you've got.
-        </p>
-        <p>
-          What drives me is people. I love connecting with customers, learning their stories, and turning those insights into tools that make their lives easier. I believe the best products are built in conversation with the communities they serve. That's why you'll always find me talking to users, hopping into DMs, asking questions, and learning everything I can to grow better, not just bigger.
-        </p>
-        <p>
-          I believe bold visions don't need perfect conditions. They just need clarity, grit, and momentum. That's how I lead. That's how I build. And that's the heart of what we're doing at Voxxy.
-        </p>
+      <section className="about-section">
+        <h2 className="text-reveal">About</h2>
+        <div className="about-content">
+          <p>
+            I'm a CS grad turned program manager turned startup founder. I spent 8 years at Microsoft leading product strategy, shipping enterprise tools used by 10,000+ employees, managing a $2M cloud portfolio, and building systems that actually worked at scale. Along the way, I founded equity groups, launched AI products, and mentored first-time builders.
+          </p>
+          <p>
+            Then I left to build the thing I couldn't stop thinking about.
+          </p>
+          <p>
+            Voxxy started from a simple frustration: planning anything with a group of people is unreasonably hard. That insight — combined with years of community organizing, teaching CS in Brooklyn public schools, and watching how real people coordinate in real life — became the foundation for what we're building today.
+          </p>
+          <p className="highlight">
+            I'm a community organizer who learned to code, and a technologist who never stopped organizing. That's the lens I build through.
+          </p>
+        </div>
       </section>
 
-      {/* === About Me Content Start === */}
+      {/* What I'm Building Section */}
+      <section className="building-section">
+        <h2 className="text-reveal">What I'm Building</h2>
+        <div className="building-intro">
+          <h3>Voxxy AI</h3>
+          <p>Social planning infrastructure for the real world. Two products, one mission: making it easier for people to get together.</p>
+        </div>
+        <div className="product-grid">
+          <div className="product-card">
+            <span className="product-type">B2C</span>
+            <h4>Voxxy Mobile</h4>
+            <p>A dining recommendation app that takes the indecision out of "where should we eat?" Powered by AI, built around your group's actual preferences.</p>
+          </div>
+          <div className="product-card">
+            <span className="product-type">B2B</span>
+            <h4>Voxxy Presents</h4>
+            <p>An event management platform purpose-built for recurring community events — art markets, pop-ups, food festivals, and more. Already in paid pilot with event producers managing thousands of vendors and attendees.</p>
+          </div>
+        </div>
+      </section>
 
-      {/* Work Experience */}
+      {/* Experience Section */}
       <section className="experience-section">
-        <h2>Work Experience</h2>
-
-        {/* Voxxy – Founder & CEO */}
-        <div className="experience">
-          <h3>Voxxy – Founder & CEO</h3>
-          <p><strong>Present</strong> | New York, NY</p>
-          <p>
-            As the founder and CEO of Voxxy, I’m leading the development of an AI-powered group planning platform that helps people coordinate experiences more easily. From meals to trips and events, Voxxy reduces group chat chaos and streamlines decision-making for planners and their communities. I drive product vision, customer research, fundraising, and go-to-market execution, all while building a company grounded in human connection, creativity, and speed.
-          </p>
-          <h4>Key Achievements:</h4>
-          <ul>
-            <li><strong>Product Strategy:</strong> Designed and launched Voxxy’s group planning assistant, helping users plan with preferences, budgets, and dietary needs in mind.</li>
-            <li><strong>User Research:</strong> Conducted 30+ interviews to validate product-market fit and prioritize high-value MVP features.</li>
-            <li><strong>Community Building:</strong> Built a following of early adopters and power users across foodies, travelers, and professional planners.</li>
-            <li><strong>Marketing & Launch:</strong> Led brand development and a multi-channel go-to-market campaign with Product Hunt, social media, and email outreach.</li>
-            <li><strong>Startup Operations:</strong> Managed company incorporation, equity structure, and early-stage fundraising preparation.</li>
-          </ul>
-        </div>
-
-        {/* Microsoft – Senior Technical Program Manager */}
-        <div className="experience">
-          <h3>Microsoft – Senior Technical Program Manager</h3>
-          <p><strong>2019 – Present</strong> | New York, NY</p>
-          <p>
-            As a Senior Technical Program Manager, I lead product strategies that help Microsoft’s technical
-            organizations collaborate and innovate with strategic customers. My work focuses on developing people-centered
-            platforms, streamlining internal processes, and driving measurable business outcomes. I manage product backlogs,
-            write user stories, and lead cross-functional teams to deliver impactful solutions that balance technical
-            constraints with business goals.
-          </p>
-          <h4>Key Achievements:</h4>
-          <ul>
-            <li><strong>Strategic Product Development:</strong> Envisioned and launched internal tools, dashboards, and custom applications used by over 10,000 employees.</li>
-            <li><strong>Azure DevOps Integration:</strong> Delivered an Azure DevOps-based solution for project tracking and implemented a Power App for capacity planning.</li>
-            <li><strong>Data-Driven Insights:</strong> Designed dashboards enabling executives to make informed decisions with real-time insights.</li>
-            <li><strong>Process Automation:</strong> Streamlined workflows, reducing manual effort and improving reporting processes.</li>
-            <li><strong>Event Leadership:</strong> Hosted two internal conferences and hackathons as content creator and moderator.</li>
-            <li><strong>Team Leadership:</strong> Coached junior teams in agile practices, enhancing productivity.</li>
-            <li><strong>Philanthropy Leadership:</strong> Managed philanthropic initiatives and community partnerships.</li>
-          </ul>
-        </div>
-
-        {/* Microsoft – Partner Development Manager */}
-        <div className="experience">
-          <h3>Microsoft – Partner Development Manager</h3>
-          <p><strong>2017 – 2019</strong> | Chicago, IL</p>
-          <p>
-            In my role as a Partner Development Manager, I worked closely with startups and independent software vendors
-            (ISVs) across 12 states to drive innovation and growth through Azure cloud solutions. I guided these companies
-            in cloud migrations, revenue scaling, and envisioning future software product strategies.
-          </p>
-          <h4>Key Achievements:</h4>
-          <ul>
-            <li><strong>Startup Innovation:</strong> Partnered with over 50 software vendors, driving innovation and scaling infrastructure with Azure.</li>
-            <li><strong>Revenue Growth:</strong> Managed a $2M Azure cloud portfolio, exceeding revenue targets.</li>
-            <li><strong>Training:</strong> Delivered Azure Platform Readiness training to over 100 recruits.</li>
-            <li><strong>Technical Advocacy:</strong> Spoke at technical panels and industry events.</li>
-            <li><strong>Strategic Envisioning:</strong> Led envisioning sessions for future-ready software products.</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Volunteer Experience */}
-      <section className="volunteer-section">
-        <h2>Volunteer Experience</h2>
-
-        
-        <div className="experience">
-          <h3>TEALS (Technology Education and Literacy in Schools) - 2023,2034</h3>
-          <p>
-            Served as a teacher assistant at Boys and Girls High School for two years, delivering lessons on Generative AI
-            and cybersecurity, and hosting career days at Microsoft offices.
-          </p>
-        </div>
-
-        <div className="experience">
-          <h3>Black Girls Code - 2018,2023</h3>
-          <p>
-            I’ve been an active volunteer with Black Girls Code, supporting events such as summer camps, career days, and
-            hackathons, empowering young girls to explore STEM fields.
-          </p>
-        </div>
-
-        <div className="experience">
-          <h3>Seattle Pride – Board of Directors 2020,2021</h3>
-          <p>
-            As a Board Member, I transitioned the Seattle Pride Parade to a virtual event during the pandemic and supported
-            fundraising and community engagement initiatives.
-          </p>
-        </div>
-        <div className="experience">
-          <h3>Center on Halsted - 2018 </h3>
-          <p>
-            As the Lab IT Technician at Center on Halsted, I supported community members with resume building and improving
-            computer literacy skills.
-          </p>
-        </div>
-        <div className="experience">
-          <h3>Girls Who Code - 2017</h3>
-          <p>
-            I led an eight-week coding program at a high school in Toledo, Ohio, teaching girls the fundamentals of HTML
-            and CSS. With support from Girls Who Code, I developed a year-long lesson plan balancing theory and hands-on
-            learning.
-          </p>
-        </div>
-      </section>
-      {/* === About Me Content End === */}
-
-      {/* Projects Section */}
-      <section className="projects-section">
-        <h2>My Projects</h2>
-        <p>Explore some of the projects I've worked on. Click on any project to view more.</p>
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card">
-              <h2>{project.name}</h2>
-              <p>{project.description}</p>
-              <a href={project.github} target="_blank" rel="noopener noreferrer">
-                View  →
-              </a>
+        <h2 className="text-reveal">Experience</h2>
+        <div className="experience-grid">
+          {experience.map((item, index) => (
+            <div key={index} className="experience-card">
+              <h3>{item.title}</h3>
+              <div className="date">{item.date}</div>
+              <p>{item.description}</p>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section className="projects-section">
+        <h2 className="text-reveal">Projects</h2>
+        <div className="horizontal-scroll-wrapper">
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <div key={index} className="project-card">
+                <span className="category">{project.category}</span>
+                <h3>{project.name}</h3>
+                <p>{project.description}</p>
+                <div className="tech-stack">
+                  {project.tech.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="scroll-hint">Scroll to see more →</p>
+      </section>
+
+      {/* Community & Teaching Section */}
+      <section className="community-section">
+        <h2 className="text-reveal">Community & Teaching</h2>
+        <p className="community-intro">
+          Before I was building products, I was building programs. Community work isn't a side project for me — it's the reason I build.
+        </p>
+        <div className="horizontal-scroll-wrapper">
+          <div className="community-grid">
+            {community.map((item, index) => (
+              <div key={index} className="community-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="scroll-hint">Scroll to see more →</p>
+      </section>
+
       {/* Contact Section */}
       <section className="contact-section">
-        <h2>Let's Connect</h2>
-        <p>I'm always excited to connect with fellow builders, founders, and tech enthusiasts. Whether you want to chat about group planning, AI, or just share startup stories, I'd love to hear from you.</p>
-        <p>
-          <a href="mailto:courtneygreer@heyvoxxy.com" className="email-link">courtneygreer@heyvoxxy.com</a>
-        </p>
+        <h2 className="text-reveal">Let's Talk</h2>
+        <p>I'm always down to connect with founders, builders, and anyone thinking about how technology can bring people together.</p>
+        <a href="mailto:courtneygreer@heyvoxxy.com" className="email-link">courtneygreer@heyvoxxy.com</a>
+        <div className="contact-links">
+          <a href="https://www.linkedin.com/in/courtney-greer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/greerlcourtney/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://heyvoxxy.com" target="_blank" rel="noopener noreferrer">heyvoxxy.com</a>
+        </div>
       </section>
     </div>
   );
