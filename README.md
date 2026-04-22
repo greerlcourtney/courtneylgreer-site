@@ -49,6 +49,10 @@ Keep `main` green before relying on automatic deploys.
 
 [Dependabot](.github/dependabot.yml) opens weekly grouped PRs for npm dependencies. Review changelogs, run `npm test` and `npm run build` locally, then merge.
 
+## Maintenance (legacy)
+
+`node_modules/` is still **tracked in git** from an earlier setup. `.gitignore` stops new untracked noise locally, but **tracked** paths are not ignored—avoid `git add node_modules/`. A future cleanup is to run `git rm -r --cached node_modules` once (large diff), rely on `npm ci` in CI and on hosts, and never commit dependencies again.
+
 ## Security
 
 See [SECURITY.md](SECURITY.md) for how to report issues and project-specific notes.
