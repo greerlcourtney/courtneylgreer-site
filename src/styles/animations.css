@@ -1,0 +1,90 @@
+/* Progress Line */
+.progress-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.1s var(--ease-out);
+}
+
+/* Text Reveal Animation */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
+}
+
+.text-reveal .word.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Horizontal Scroll Section */
+.horizontal-scroll-wrapper {
+  margin: 0 calc(-1 * var(--space-page-inline));
+  padding: 0 var(--space-page-inline);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-section .projects-grid {
+  display: flex;
+  gap: var(--space-6);
+  padding-bottom: var(--space-5);
+  width: max-content;
+}
+
+.projects-section .project-card {
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+}
+
+.horizontal-scroll-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+  pointer-events: none;
+}
+
+.projects-section {
+  position: relative;
+}
+
+.scroll-hint {
+  font-size: var(--text-xs);
+  color: var(--color-fg-subtle);
+  margin-top: var(--space-4);
+  font-style: italic;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-reveal) var(--ease-out), transform var(--duration-reveal) var(--ease-out);
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

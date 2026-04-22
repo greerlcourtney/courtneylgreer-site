@@ -1,0 +1,108 @@
+/* Design tokens — palette, semantic colors, spacing, type, motion.
+   Override in [data-theme="dark"] on :root later for dark mode. */
+:root {
+  /* —— Palette (primitives) —— */
+  --accent: #1a0a2e;
+  --accent-light: #2d1450;
+  --black: #0a0612;
+  --white: #fff;
+  --gray-100: #f8f8fa;
+  --gray-200: #e8e8ec;
+  --gray-400: #999;
+  --gray-600: #666;
+  --gray-800: #333;
+
+  /* —— Semantic: default (light) theme —— */
+  --color-bg: var(--white);
+  --color-fg: var(--black);
+  --color-fg-muted: var(--gray-600);
+  --color-fg-subtle: var(--gray-400);
+  --color-fg-strong: var(--gray-800);
+  --color-border: var(--gray-200);
+  --surface-band: var(--gray-100);
+
+  --surface-inverse: var(--accent);
+  --surface-inverse-muted: var(--accent-light);
+
+  /* Text / UI on accent (inverse) surfaces — color-mix keeps future dark theme viable */
+  --on-inverse: var(--white);
+  --on-inverse-border-subtle: color-mix(in srgb, var(--on-inverse) 10%, transparent);
+  --on-inverse-border-strong: color-mix(in srgb, var(--on-inverse) 30%, transparent);
+  --on-inverse-text-faint: color-mix(in srgb, var(--on-inverse) 60%, transparent);
+  --on-inverse-text-soft: color-mix(in srgb, var(--on-inverse) 70%, transparent);
+
+  /* Muted label on accent sections (keeps existing gray contrast on purple) */
+  --text-on-accent-muted: var(--gray-400);
+
+  --shadow-card: 0 12px 40px color-mix(in srgb, var(--black) 8%, transparent);
+
+  /* —— Content cards (experience, projects, judging, community) —— */
+  --card-radius: 12px;
+  --card-border: var(--gray-200);
+  --card-shadow-rest:
+    0 1px 2px color-mix(in srgb, var(--black) 4%, transparent),
+    0 8px 24px color-mix(in srgb, var(--black) 4%, transparent);
+  --card-shadow-hover:
+    0 4px 12px color-mix(in srgb, var(--black) 5%, transparent),
+    0 20px 40px color-mix(in srgb, var(--black) 6%, transparent);
+  --card-accent-hairline: color-mix(in srgb, var(--accent) 32%, transparent);
+
+  /* —— Spacing —— */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 80px;
+  --space-12: 100px;
+  --space-13: 120px;
+  --space-page-inline: var(--space-6);
+  --space-section-y: var(--space-11);
+  --space-hero-block-end: var(--space-12);
+  --space-hero-block-start: var(--space-13);
+
+  /* —— Typography scale —— */
+  --font-sans: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  --line-height-body: 1.7;
+  --line-height-tight: 1;
+  --line-height-snug: 1.5;
+  --line-height-relaxed: 1.8;
+
+  --text-2xs: 0.7rem;
+  --text-xs: 0.85rem;
+  --text-sm: 1rem;
+  --text-md: 1.1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.2rem;
+  --text-2xl: 1.25rem;
+  --text-3xl: 1.3rem;
+  --text-4xl: 1.4rem;
+  --text-5xl: 1.5rem;
+  --text-hero: 5rem;
+  --text-display: 2rem;
+
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  --letter-spacing-wide: 2px;
+  --letter-spacing-ui: 1px;
+  --letter-spacing-tight-hero: -4px;
+  --letter-spacing-tight: -0.5px;
+  --letter-spacing-tight-lg: -1px;
+  --letter-spacing-card: -0.5px;
+
+  /* —— Motion —— */
+  --ease-default: ease;
+  --ease-out: ease-out;
+  --duration-fast: 0.2s;
+  --duration-medium: 0.3s;
+  --duration-slow: 0.6s;
+  --duration-reveal: 0.8s;
+}
