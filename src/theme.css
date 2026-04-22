@@ -47,6 +47,9 @@
     0 20px 40px color-mix(in srgb, var(--black) 6%, transparent);
   --card-accent-hairline: color-mix(in srgb, var(--accent) 32%, transparent);
 
+  /* Horizontal scroll cards (projects + community): same width and stretched height */
+  --scroll-card-width: 320px;
+
   /* —— Spacing —— */
   --space-1: 4px;
   --space-2: 8px;

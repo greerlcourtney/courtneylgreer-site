@@ -132,6 +132,14 @@ function Main() {
       url:
         'https://www.linkedin.com/posts/courtney-greer_growthmindset-softskills-mindsetdevelopment-activity-7188657901656317952-XDqo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA56CmABt_QI-ZXgbQvQPaqejKiFdbGhk9E',
     },
+    {
+      headline: 'Navigating the GenAI FOMO',
+      meta: 'LinkedIn Pulse · Mar 2024',
+      description:
+        'On the digital divide in the GenAI era, democratizing technology, community-led development, and why inclusive adoption matters when disruptive tech creates real fear of missing out.',
+      linkLabel: 'Read article →',
+      url: 'https://www.linkedin.com/pulse/navigating-genai-fomo-ensuring-inclusivity-era-disruptive-greer-milke/',
+    },
   ];
 
   const judgingAdvising = [

@@ -44,15 +44,17 @@
 
 .projects-section .projects-grid {
   display: flex;
+  align-items: stretch;
   gap: var(--space-6);
   padding-bottom: var(--space-5);
   width: max-content;
 }
 
 .projects-section .project-card {
-  min-width: 320px;
-  max-width: 320px;
-  flex-shrink: 0;
+  flex: 0 0 var(--scroll-card-width);
+  width: var(--scroll-card-width);
+  min-width: var(--scroll-card-width);
+  max-width: var(--scroll-card-width);
 }
 
 .horizontal-scroll-wrapper::after {
