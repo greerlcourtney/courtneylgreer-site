@@ -9,6 +9,8 @@ Personal site: career story, projects, speaking, and community work—built with
 
 ## Local development
 
+This repo uses [`.npmrc`](.npmrc) with `legacy-peer-deps=true` so `npm install` works cleanly with Create React App and packages such as `@vercel/analytics` (their optional peer metadata conflicts with CRA’s TypeScript pin).
+
 ```bash
 npm ci
 npm start
@@ -24,6 +26,10 @@ Opens the dev server at [http://localhost:3000](http://localhost:3000) with hot 
 | `npm run build`| Optimized production bundle in `build/`      |
 | `npm test`     | Jest tests (`CI=true` for non-interactive)   |
 | `npm audit`    | Check dependencies for known vulnerabilities |
+
+## Analytics (Vercel)
+
+[`@vercel/analytics`](https://vercel.com/docs/analytics) is wired in [`src/App.js`](src/App.js) via `<Analytics />`. After you deploy on Vercel, open the project **Analytics** tab; page views appear as you (and visitors) load the site. Use **Speed Insights** separately if you want Web Vitals.
 
 ## Deployment process
 
