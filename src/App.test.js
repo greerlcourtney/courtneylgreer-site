@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import HomePage from './components/pages/HomePage';
 
 test('renders site name', () => {
-  render(<App />);
+  render(<HomePage />);
   expect(screen.getByRole('heading', { name: /Courtney L\. Greer/i })).toBeInTheDocument();
 });

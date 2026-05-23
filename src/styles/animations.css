@@ -43,18 +43,13 @@
 }
 
 .projects-section .projects-grid {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
-  padding-bottom: var(--space-5);
-  width: max-content;
 }
 
 .projects-section .project-card {
-  flex: 0 0 var(--scroll-card-width);
-  width: var(--scroll-card-width);
-  min-width: var(--scroll-card-width);
-  max-width: var(--scroll-card-width);
+  width: 100%;
 }
 
 .horizontal-scroll-wrapper::after {
@@ -77,6 +72,12 @@
   color: var(--color-fg-subtle);
   margin-top: var(--space-4);
   font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .projects-section .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Fade-in Animation */
