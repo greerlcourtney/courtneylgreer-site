@@ -69,24 +69,25 @@
   font-size: var(--text-lg);
   font-weight: var(--weight-bold);
   color: var(--color-fg-strong);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
-.service-card__hours {
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
+.service-card__price {
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
   color: var(--accent);
   margin-bottom: var(--space-3);
 }
 
-.service-card__description {
-  font-size: var(--text-base);
+.service-card__headline {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
   color: var(--color-fg);
-  line-height: var(--leading-body);
+  line-height: var(--leading-snug);
   margin-bottom: var(--space-3);
 }
 
-.service-card__details {
+.service-card__description {
   font-size: var(--text-sm);
   color: var(--color-fg-muted);
   line-height: var(--leading-relaxed);

@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { track } from '@vercel/analytics';
-import { HOURLY_RATE } from '../data/consultingServices';
 
 function ServiceCard({ service }) {
   const hoverStart = useRef(null);
@@ -30,15 +29,9 @@ function ServiceCard({ service }) {
     >
       <div className="content-card__body">
         <h3 className="service-card__name">{service.name}</h3>
-        {service.hours ? (
-          <p className="service-card__hours">
-            {service.hours} hours &middot; ${HOURLY_RATE}/hr
-          </p>
-        ) : null}
+        <p className="service-card__price">{service.price}</p>
+        <p className="service-card__headline">{service.headline}</p>
         <p className="service-card__description">{service.description}</p>
-        {service.details ? (
-          <p className="service-card__details">{service.details}</p>
-        ) : null}
       </div>
     </div>
   );

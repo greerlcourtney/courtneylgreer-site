@@ -1,28 +1,29 @@
-import services, { HOURLY_RATE } from './consultingServices';
+import services from './consultingServices';
 
-test('exports an hourly rate', () => {
-  expect(typeof HOURLY_RATE).toBe('number');
-  expect(HOURLY_RATE).toBeGreaterThan(0);
-});
-
-test('exports three service tiers', () => {
-  expect(services).toHaveLength(3);
+test('exports five service tiers', () => {
+  expect(services).toHaveLength(5);
 });
 
 test('each service has required fields', () => {
   services.forEach((service) => {
     expect(service).toHaveProperty('id');
     expect(service).toHaveProperty('name');
-    expect(service).toHaveProperty('hours');
+    expect(service).toHaveProperty('price');
+    expect(service).toHaveProperty('headline');
     expect(service).toHaveProperty('description');
-    expect(service).toHaveProperty('details');
-    expect(typeof service.hours).toBe('number');
-    expect(service.hours).toBeGreaterThan(0);
+    expect(typeof service.price).toBe('string');
   });
 });
 
-test('no Custom tier exists', () => {
-  expect(services.find((s) => s.id === 'custom')).toBeUndefined();
+test('tiers are in correct order', () => {
+  const ids = services.map((s) => s.id);
+  expect(ids).toEqual([
+    'team-training',
+    'discovery',
+    'setup',
+    'full-integration',
+    'ongoing-support',
+  ]);
 });
 
 test('service IDs are unique', () => {

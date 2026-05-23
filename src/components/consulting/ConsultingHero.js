@@ -6,6 +6,8 @@ function ConsultingHero() {
       <h1 className="text-reveal">Wolf Development Studios</h1>
       <p className="consulting-hero__tagline">
         AI implementation, software setup, and team training for small businesses.
+        We help you adopt the right tools without the overwhelm, so your team spends
+        less time on busywork and more time on the work that matters.
       </p>
       <div className="consulting-hero__contact">
         <a href="mailto:team@wolfdevelopmentstudio.com">team@wolfdevelopmentstudio.com</a>

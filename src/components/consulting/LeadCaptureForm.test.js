@@ -29,10 +29,11 @@ test('renders service options without Custom', () => {
   expect(select).toBeInTheDocument();
   const options = select.querySelectorAll('option');
   const optionTexts = Array.from(options).map((o) => o.textContent);
-  expect(optionTexts).toContain('Discovery (5 hrs)');
-  expect(optionTexts).toContain('Setup (15 hrs)');
-  expect(optionTexts).toContain('Full Integration (40 hrs)');
-  expect(optionTexts).not.toContain('Custom');
+  expect(optionTexts).toContain('Team Training ($500)');
+  expect(optionTexts).toContain('Discovery ($750)');
+  expect(optionTexts).toContain('Setup ($2,250)');
+  expect(optionTexts).toContain('Full Integration ($6,000)');
+  expect(optionTexts).toContain('Ongoing Support ($750/month)');
 });
 
 test('tracks form_start on first field focus', () => {
