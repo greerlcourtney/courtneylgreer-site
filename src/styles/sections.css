@@ -354,6 +354,10 @@
   .judging-grid {
     grid-template-columns: 1fr;
   }
+
+  .community-section .community-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Community Section */
@@ -378,18 +382,13 @@
 }
 
 .community-section .community-grid {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
-  padding-bottom: var(--space-5);
-  width: max-content;
 }
 
 .community-card {
-  flex: 0 0 var(--scroll-card-width);
-  width: var(--scroll-card-width);
-  min-width: var(--scroll-card-width);
-  max-width: var(--scroll-card-width);
+  width: 100%;
 }
 
 .community-card .content-card__body {
@@ -411,6 +410,10 @@
   margin: 0;
   line-height: 1.6;
   flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .community-card .content-card__body > p {
@@ -469,6 +472,10 @@
   color: var(--color-fg-muted);
   font-size: 0.95rem;
   margin: 0 0 var(--space-5);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .project-card .project-card-link {
