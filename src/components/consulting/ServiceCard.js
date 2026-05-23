@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { track } from '@vercel/analytics';
 
-function ServiceCard({ service, expanded }) {
+function ServiceCard({ service }) {
   const hoverStart = useRef(null);
 
   const handleMouseEnter = () => {
@@ -23,19 +23,15 @@ function ServiceCard({ service, expanded }) {
 
   return (
     <div
-      className={`service-card content-card fade-in${expanded ? ' service-card--expanded' : ''}`}
+      className="service-card content-card fade-in"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="content-card__body">
         <h3 className="service-card__name">{service.name}</h3>
         <p className="service-card__price">{service.price}</p>
-        {expanded && (
-          <>
-            <p className="service-card__headline">{service.headline}</p>
-            <p className="service-card__description">{service.description}</p>
-          </>
-        )}
+        <p className="service-card__headline">{service.headline}</p>
+        <p className="service-card__description">{service.description}</p>
       </div>
     </div>
   );
