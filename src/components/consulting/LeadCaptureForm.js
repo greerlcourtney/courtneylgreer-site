@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { track } from '@vercel/analytics';
 
-const FORMSPREE_URL = process.env.REACT_APP_FORMSPREE_ENDPOINT;
-
 function LeadCaptureForm({ utm }) {
+  const FORMSPREE_URL = process.env.REACT_APP_FORMSPREE_ENDPOINT;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
