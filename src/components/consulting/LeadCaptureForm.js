@@ -133,9 +133,11 @@ function LeadCaptureForm({ utm }) {
               onFocus={() => handleFocus('service')}
             >
               <option value="">Select a service</option>
-              <option value="discovery">Discovery (5 hrs)</option>
-              <option value="setup">Setup (15 hrs)</option>
-              <option value="full-integration">Full Integration (40 hrs)</option>
+              <option value="team-training">Team Training ($500)</option>
+              <option value="discovery">Discovery ($750)</option>
+              <option value="setup">Setup ($2,250)</option>
+              <option value="full-integration">Full Integration ($6,000)</option>
+              <option value="ongoing-support">Ongoing Support ($750/month)</option>
             </select>
           </div>
 
