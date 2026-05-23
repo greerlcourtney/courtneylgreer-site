@@ -60,22 +60,21 @@
 
 .consulting-pricing__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-5);
+  gap: var(--space-6);
 }
 
 /* Service Card */
 .service-card__name {
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
   font-weight: var(--weight-bold);
-  color: var(--color-fg-strong);
-  margin-bottom: var(--space-1);
+  color: var(--color-fg);
+  margin: 0 0 var(--space-1);
 }
 
 .service-card__price {
-  font-size: var(--text-md);
-  font-weight: var(--weight-bold);
-  color: var(--accent);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-fg-muted);
   margin-bottom: var(--space-3);
 }
 
@@ -90,7 +89,8 @@
 .service-card__description {
   font-size: var(--text-sm);
   color: var(--color-fg-muted);
-  line-height: var(--leading-relaxed);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Form Section */
