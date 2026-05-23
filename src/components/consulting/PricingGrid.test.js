@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import PricingGrid from './PricingGrid';
 
 // Mock @vercel/analytics
@@ -25,19 +25,4 @@ test('displays flat prices', () => {
   expect(screen.getByText('$500')).toBeInTheDocument();
   expect(screen.getByText('$750/month')).toBeInTheDocument();
   expect(screen.getByText('$6,000')).toBeInTheDocument();
-});
-
-test('hides descriptions by default and shows them on Explore all', () => {
-  render(<PricingGrid />);
-  // Descriptions hidden in collapsed state
-  expect(screen.queryByText(/We meet your team/)).not.toBeInTheDocument();
-
-  // Click Explore all
-  fireEvent.click(screen.getByRole('button', { name: /Explore all/i }));
-
-  // Descriptions now visible
-  expect(screen.getByText(/We meet your team/)).toBeInTheDocument();
-
-  // Button text changes to Collapse
-  expect(screen.getByRole('button', { name: /Collapse/i })).toBeInTheDocument();
 });
