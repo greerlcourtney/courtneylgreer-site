@@ -73,10 +73,53 @@ Quick checklist:
 
 | Path | Role |
 | ---- | ---- |
-| `src/components/Main.js` | Page content and data |
-| `src/theme.css` | Design tokens |
-| `src/styles/` | Layout, sections, animations |
+| `src/App.js` | Route definitions (React Router v7) |
+| `src/components/pages/` | One file per route (`HomePage`, `ExperiencePage`, `ProjectsPage`, `ConsultingPage`, `FilmPage`) |
+| `src/components/layout/` | `Layout.js` (shell), `Navbar.js`, `Footer.js` |
+| `src/components/shared/` | Reusable components (`CardMore`, `CardMedia`, `ExternalOrPlaceholderLink`) |
+| `src/components/data/` | Content arrays (`projects.js`, `experience.js`, `filmCredits.js`, etc.) — edit here to update page content |
+| `src/theme.css` | Design tokens (colors, spacing, type scale, motion) |
+| `src/App.css` | Imports `theme.css` and all per-feature stylesheets |
+| `src/styles/` | Per-feature stylesheets (`base.css`, `sections.css`, `navbar.css`, `film.css`, `consulting.css`, `animations.css`) |
 | `public/` | Static assets, `index.html`, PWA manifest |
+
+## Coding agent guide
+
+Context a coding agent (or new contributor) needs to work effectively in this repo:
+
+**Stack**
+- Create React App (CRA) + React 19 + React Router v7 — SPA, no SSR, no Next.js/Astro
+- Plain CSS with design tokens in `src/theme.css` — no Tailwind, no CSS-in-JS
+- Jest + React Testing Library — all tests colocated as `*.test.js` next to the file they test
+
+**Adding a page**
+1. Create `src/components/pages/MyPage.js`. Set `document.title` in a `useEffect`.
+2. Add a `<Route path="my-page" element={<MyPage />} />` inside the `<Route element={<Layout />}>` block in `src/App.js`.
+3. Add a `<NavLink to="/my-page">` in `src/components/layout/Navbar.js`.
+4. Create `src/styles/my-page.css` and import it at the bottom of `src/App.css`.
+5. Add `src/components/pages/MyPage.test.js` following existing page test patterns.
+
+**Adding content (no page changes needed)**
+- All page content is in `src/components/data/*.js` as exported arrays. Edit the array; the page re-renders automatically.
+- `filmCredits.js` shape: `{ title, roles, year, status? }` — used by both `FilmPage` and `ProjectsPage`.
+
+**Styling conventions**
+- Use `var(--token-name)` from `src/theme.css` — never hardcode colors or spacing values.
+- Full-width dark bands use the negative-margin technique: `margin: 0 calc(-1 * var(--space-page-inline)); padding-inline: var(--space-page-inline);`
+- Dark/cinematic sections use `--black` or `--surface-inverse` backgrounds with `--on-inverse` text.
+- Mobile breakpoint: `@media (max-width: 768px)` — keep it in the same stylesheet as the component.
+
+**Testing**
+- Run `npm test` locally before pushing. CI (`CI=true npm run test:coverage`) must pass on every push.
+- Page tests render the component directly (no router wrapper needed) as long as the component only uses plain `<a>` tags, not `<Link>`.
+- If a component needs router context, wrap in `<MemoryRouter>` from `react-router-dom` in the test.
+
+**Deployment pipeline**
+1. Work on a feature branch or `develop`.
+2. Push → GitHub Actions CI runs automatically (install → test:coverage → build).
+3. Open a PR into `main` when CI is green.
+4. Merging to `main` triggers a Vercel production deploy automatically (Vercel is connected to this repo; SPA fallback is configured in `vercel.json`).
+5. Preview deploys are available for every open PR via Vercel.
 
 ## License / usage
 

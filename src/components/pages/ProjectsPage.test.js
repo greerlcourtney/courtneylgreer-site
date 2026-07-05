@@ -36,3 +36,20 @@ test('sets document title', () => {
   render(<ProjectsPage />);
   expect(document.title).toBe('Projects | Courtney L. Greer');
 });
+
+test('renders Film section heading', () => {
+  render(<ProjectsPage />);
+  expect(screen.getByRole('heading', { name: /^Film$/i })).toBeInTheDocument();
+});
+
+test('renders film credit cards', () => {
+  render(<ProjectsPage />);
+  expect(screen.getByText('8 Women 8 Lives 8 Stories')).toBeInTheDocument();
+  expect(screen.getByText('Painting Lounge Free Paint Night')).toBeInTheDocument();
+});
+
+test('renders link to film page', () => {
+  render(<ProjectsPage />);
+  const link = screen.getByRole('link', { name: /View full film page/i });
+  expect(link).toHaveAttribute('href', '/film');
+});
