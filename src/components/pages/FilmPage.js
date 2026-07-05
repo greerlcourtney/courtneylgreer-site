@@ -26,7 +26,7 @@ function FilmPage() {
 
       <section className="film-credits" aria-labelledby="film-credits-heading">
         <h2 id="film-credits-heading" className="film-section-label">Credits</h2>
-        <ul className="film-credits__list" role="list">
+        <ul className="film-credits__list">
           {filmCredits.map((credit) => (
             <li key={credit.title} className="film-credits__item">
               <span className="film-credits__title">{credit.title}</span>
