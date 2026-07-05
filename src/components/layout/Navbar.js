@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const location = useLocation();
 
-  const closeMenu = () => setMobileOpen(false);
+  const closeMenu = () => {
+    setMobileOpen(false);
+    setServicesOpen(false);
+  };
+
+  const isServicesActive =
+    location.pathname === '/consulting' || location.pathname === '/film';
 
   return (
     <nav className="site-nav" aria-label="Main navigation">
@@ -27,7 +35,22 @@ function Navbar() {
         <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
         <NavLink to="/experience" onClick={closeMenu}>Experience</NavLink>
         <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
-        <NavLink to="/consulting" onClick={closeMenu}>Consulting</NavLink>
+
+        <div className={`site-nav__dropdown${isServicesActive ? ' is-active' : ''}`}>
+          <button
+            className="site-nav__dropdown-trigger"
+            aria-expanded={servicesOpen}
+            aria-haspopup="true"
+            onClick={() => setServicesOpen(!servicesOpen)}
+          >
+            Consulting
+            <span className="site-nav__dropdown-chevron" aria-hidden="true" />
+          </button>
+          <div className={`site-nav__dropdown-panel${servicesOpen ? ' is-open' : ''}`}>
+            <NavLink to="/consulting" onClick={closeMenu}>Tech</NavLink>
+            <NavLink to="/film" onClick={closeMenu}>Film</NavLink>
+          </div>
+        </div>
 
         <div className="site-nav__social">
           <a href="https://www.linkedin.com/in/courtney-greer/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

@@ -4,6 +4,7 @@ import CardMedia from '../shared/CardMedia';
 import CardMore from '../shared/CardMore';
 import projects from '../data/projects';
 import community from '../data/community';
+import filmCredits from '../data/filmCredits';
 
 function ProjectsPage() {
   useEffect(() => {
@@ -62,6 +63,29 @@ function ProjectsPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="film-projects-section" aria-labelledby="film-projects-heading">
+        <h2 id="film-projects-heading" className="text-reveal">Film</h2>
+        <div className="film-projects-grid">
+          {filmCredits.map((credit) => (
+            <div key={credit.title} className="film-credit-card fade-in">
+              <div className="film-credit-card__year-row">
+                <span className="film-credit-card__year">{credit.year}</span>
+                {credit.status && (
+                  <span className="film-credit-card__status">{credit.status}</span>
+                )}
+              </div>
+              <h3 className="film-credit-card__title">{credit.title}</h3>
+              <div className="film-credit-card__roles">
+                {credit.roles.split(', ').map((role) => (
+                  <span key={role} className="film-credit-card__role-tag">{role}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <a href="/film" className="film-projects-link">View full film page →</a>
       </section>
     </>
   );
